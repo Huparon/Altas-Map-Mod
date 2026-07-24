@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "altas-map",
+	"version": "${version}",
+	"name": "Altas-Map",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/altas-map/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.github.moralts.altasmap.AltasMap",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.github.moralts.altasmap.client.AltasMapClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"altas-map.mixins.json",
+		{
+			"config": "altas-map.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
